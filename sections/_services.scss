@@ -1,0 +1,59 @@
+@use '../custom'as*;
+@use '../components/mixin'as*;
+
+.services{
+    @include gradient;
+    padding: 6.5rem 0 0 0;
+    @include media-breakpoint-down(sm){
+          position: relative;
+          padding: 0 0 -7.5rem 0;
+    }
+}
+
+
+@include media-breakpoint-down(sm){
+      .menu1{
+          position: relative;
+          top: -2.5rem;
+      } 
+      
+}
+
+
+@include media-breakpoint-down(sm){
+   .content{
+       position: relative;
+       top: -4.5rem;
+   }
+  
+}
+
+
+
+
+@include media-breakpoint-down(sm){
+    .fimage{
+        position: relative;
+        top: -3.5rem;
+    }
+   
+ }
+
+@include media-breakpoint-down(sm){
+   .content1{
+       position: relative;
+       top: -7.5rem;
+   }
+  
+}
+@include media-breakpoint-down(sm){
+  
+}
+@include media-breakpoint-down(sm){
+   
+  
+}
+@include media-breakpoint-down(sm){
+   
+  
+}

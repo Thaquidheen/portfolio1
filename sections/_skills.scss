@@ -1,0 +1,141 @@
+@use '../custom'as*;
+@use '../components/mixin'as*;
+
+
+.skills{
+    position: relative;
+    margin-top: 0;
+    padding: 6.5rem;
+    @include media-breakpoint-down(sm){
+        padding:0;
+    }
+}
+.skills-area{
+    background-color: white;
+    margin-top: 2.5rem;
+    border: 0.5rem solid indigo;
+    height: 25rem;
+    box-shadow: 10px 1px 10px 5px rgb(157, 171, 211);
+}
+    .box{
+        list-style: none;
+        
+       
+    }
+
+    .first{
+        width: 50%;
+        height: 20px;
+        background:linear-gradient(to right,($primary),($secondary));
+        display: flex;
+        animation: first 2s ease-out infinite ;
+        border-radius: 1.2rem;
+
+    }
+
+    @keyframes first {
+        0%{
+            width: 0%;
+
+        }
+        100%{
+            width: 90%;
+        }
+    }
+    .second{
+        width: 50%;
+        height: 20px;
+        background:linear-gradient(to right,($primary),($secondary));
+        display: flex;
+        animation: second 2s ease-out infinite 2s;
+        border-radius: 1.2rem;
+    }
+
+    @keyframes second {
+        0%{
+            width: 0%;
+
+        }
+        100%{
+            width: 80%;
+        }
+    }
+    .third{
+        width: 50%;
+        height: 20px;
+        background:linear-gradient(to right,($primary),($secondary));
+        display: flex;
+        animation: third 2s ease-out infinite 2s;
+        border-radius: 1.2rem;
+        
+    }
+
+    @keyframes third {
+        0%{
+            width: 0%;
+
+        }
+        100%{
+            width: 70%;
+        }
+    }
+    .fourth{
+        width: 50%;
+        height: 20px;
+        background:linear-gradient(to right,($primary),($secondary));
+        display: flex;
+        animation: fourth 2s ease-out infinite 2s;
+        border-radius: 1.2rem;
+        
+    }
+
+    @keyframes fourth {
+        0%{
+            width: 0%;
+
+        }
+        100%{
+            width: 50%;
+        }
+    }
+
+
+    @include media-breakpoint-down(sm){
+     .image2{
+         position: relative;
+         top: -5.5rem;
+     }
+  
+    }
+    
+    
+    @include media-breakpoint-down(sm){
+        .skills-area{
+            margin-top: -7.5rem;
+           
+        }
+      
+    }
+    
+    
+    @include media-breakpoint-down(sm){
+      .skills{
+          padding: 3.5rem 0;
+      }
+      
+    }
+
+    
+
+    @include media-breakpoint-down(sm){
+       
+      
+    }
+    
+
+    @include media-breakpoint-down(sm){
+       
+      
+    }
+    
+    

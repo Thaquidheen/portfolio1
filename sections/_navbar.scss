@@ -1,0 +1,24 @@
+
+@use '../custom'as*;
+
+.start-section{
+
+.navbar-1{
+    background: linear-gradient(to right,$primary,$secondary);
+}
+
+
+
+    ul{
+    li{
+        
+        a{
+            
+            font-weight: 500;
+            margin-right: 3.3rem;
+            color: $white !important;
+            padding: 1.3rem;
+        }
+    }
+    }
+}
