@@ -1,0 +1,58 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+char p[10][10],ta[10];
+int a[10],b[10],s[10],finish[10],tat[10],wt[10],i,j,n,t;
+int totwt=0,tottat=0;
+printf("enter the number of process:");
+scanf("%d",&n);
+for(i=0;i<n;i++)
+{
+ printf("enter %d process name:",i+1);
+ scanf("%s",p[i]);
+ printf(" Arrival time:");
+ scanf("%d",&a[i]);
+ printf(" Burst time:");
+ scanf("%d",&b[i]);
+ }
+ for(i=0;i<n;i++)
+ {
+ for(j=0;j<n;j++)
+ {
+ if(a[i]<a[j])
+ {
+ t=a[i];
+ a[i]=a[j];
+ a[j]=t;
+ t=b[i];
+ b[i]=b[j];
+ b[j]=t;
+ strcpy(ta,p[i]);
+ strcpy(p[i],p[j]);
+ strcpy(p[j],ta) ;
+ }
+ }
+ }
+ for(i=0;i<n;i++)
+ {
+ if(i==0)
+ s[i]=a[i];
+ else
+ s[i]=finish[i-1];
+ wt[i]=s[i]-a[i];
+ finish[i]=s[i]+b[i];
+ tat[i]=finish[i]-a[i];
+ }
+ printf("\nPname\tArrival\tBurst\tWaittime\tstart\tTAT\tFinish");
+ for(i=0;i<n;i++)
+ {
+ 
+printf("\n%s\t%d\t%d\t%d\t\t%d\t%d\t%d",p[i],a[i],b[i],wt[i],s[i],tat[i],finish[i]);
+ totwt+=wt[i];
+ tottat+=tat[i];
+ }
+ printf("\nAverage waiting time:%f",(float)totwt/n);
+ printf("\nAverage turnaroundtime time:%f",(float)tottat/n);
+ return 0;
+ }

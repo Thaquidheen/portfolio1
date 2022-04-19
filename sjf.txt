@@ -1,0 +1,49 @@
+#include<stdio.h>
+void main()
+ {
+ int j,n,p[10],bt[10],w[10],t[10],awt=0,atat=0,i,pos,temp;
+ printf("Enter the number of process : ");
+ scanf("%d",&n);
+ for(i=0;i<n;i++)
+ {
+ printf("Process P%d: ",i+1);
+ printf("\n Burst time:");
+ scanf("%d",&bt[i]);
+ p[i]=i+1;
+ }
+ for(i=0;i<n;i++)
+ {
+ pos=i;
+ for(int j=i+1;j<n;j++)
+ {
+ if(bt[j]<bt[pos])
+ pos=j;
+ }
+ 
+ temp=bt[i];
+ bt[i]=bt[pos];
+ bt[pos]=temp;
+ 
+ temp=p[i];
+ p[i]=p[pos];
+ p[pos]=temp;
+ }
+ 
+w[0]=0;
+for(i=1;i<n;i++)
+ {
+ w[i]=0;
+ for(int j=0;j<i;j++)
+ w[i]+=bt[j];
+ awt+=w[i];
+ }
+printf("\n\n Process \t Burst Time \t Wait Time \t Turn Around Time \n");
+for(i=0;i<n;i++)
+{
+ t[i]=w[i]+bt[i];
+ atat+=t[i];
+ printf("\nP%d \t\t %d \t\t %d \t\t %d \n",p[i],bt[i],w[i],t[i]);
+ }
+printf("\n Average Wait Time : %d \n",awt/n);
+printf("\n Average Turn Around Time : %d \n",atat/n);
+}

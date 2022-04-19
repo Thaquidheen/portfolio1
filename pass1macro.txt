@@ -1,0 +1,49 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+int main()
+{
+FILE *f1,*f2,*f3;
+char mne[20],opnd[20],la[20];
+f1=fopen("in.txt","r");
+f2=fopen("m2.txt","w+");
+f3=fopen("m1.txt","w+");
+fscanf(f1,"%s%s%s",la,mne,opnd);
+while(strcmp(mne,"MEND")!=0)
+{
+if(strcmp(mne,"MACRO")==0)
+{
+fprintf(f2,"%s\n",la);
+fprintf(f3,"%s\t%s\n",la,opnd);
+}
+else
+fprintf(f3,"%s\t%s\n",mne,opnd);
+fscanf(f1,"%s%s%s",la,mne,opnd);
+}
+fprintf(f3,"%s",mne);
+fclose(f1);
+fclose(f2);
+fclose(f3);
+f1=fopen("m1.txt","r");
+f2=fopen("m2.txt","r");
+printf("\n\tCONTENTS OF OUTPUT 
+FILE\n");
+char str;
+str= fgetc(f1);
+printf("\n\nM1.TXT : \n\n");
+while(str!=EOF)
+{
+printf("%c",str);
+str= fgetc(f1);
+}
+fclose(f1);
+str= fgetc(f2);
+printf("\n\nM2.TXT :\n\n");
+while(str!=EOF)
+{
+printf("%c",str);
+str= fgetc(f2);
+}
+getch();
+return 0;
+}
