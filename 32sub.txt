@@ -1,0 +1,14 @@
+.Mode1 small
+.data
+.code
+mov ax,0111h
+mov bx,1000h
+sub ax,bx
+mov cx,ax
+mov ax,5678h
+mov bx,1234h
+sbb ax,bx
+mov bx,cx
+mov dx,bx
+int 3
+end

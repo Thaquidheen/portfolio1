@@ -1,0 +1,30 @@
+.Model small
+.data 
+ a db "ENTER FIRST NUMBER: $"
+b db " ENTER SECOND NUMBER: $"
+c db" ANS : $"
+.code 
+mov ax,@data
+mov ds,ax
+lea dx,a
+mov ah,9
+int 21h
+mov ah,01h
+int 21h
+mov bx,ax
+lea dx,b
+mov ah,9
+int 21h
+mov ah,01h
+int 21h
+sub bx , ax
+add bx,30h
+lea dx,c
+mov ah,9
+int 21h
+mov dx,bx
+mov ah,02h
+int 21h
+mov ah ,4ch
+int 21h
+end

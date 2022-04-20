@@ -1,0 +1,14 @@
+.Model small
+.data
+.code
+mov ax,@data
+mov ds,ax
+mov ax,0f000h
+mov bx,1000h
+add ax,bx
+mov cx,ax
+mov ax,5678h
+mov bx,1234h
+adc ax,bx
+mov bx,cx
+int 3 end
